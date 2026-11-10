@@ -31,7 +31,7 @@ The joint test rejects equal gaps across age bands, with F(4, 31,178) = 8.57 and
 | Restrict to reported mobile keyboards | 28,944 | 8.60 | 2.82 × 10⁻⁶ |
 | Compare against the other five named postures | 33,524 | 7.66 | 6.28 × 10⁻¹¹ |
 
-The teen gap is the largest in each sensitivity model. Pooling other named postures changes the comparison population, so the resulting contrast answers a broader question. [All model contrasts](../results/tables/extension_age_gaps.csv)
+The gap for ages 10–19 is the largest in each sensitivity model. Pooling other named postures changes the comparison population, so the resulting contrast answers a broader question. [All model contrasts](../results/tables/extension_age_gaps.csv)
 
 ## Interpretation
 
