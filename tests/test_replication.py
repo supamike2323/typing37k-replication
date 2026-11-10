@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from typing37k.notebook import load_replication_notebook
+from typing37k.__main__ import load_replication_notebook
 
 
 replication = load_replication_notebook()

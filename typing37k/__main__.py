@@ -1,11 +1,32 @@
 """Command-line entry point for the Typing37K replication."""
 
 import argparse
+import json
 import os
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from types import ModuleType
 
-from .data import load_data
+
+REPLICATION_NOTEBOOK = Path(__file__).resolve().parent.parent / "replication.ipynb"
+
+
+def load_replication_notebook() -> ModuleType:
+    """Evaluate the tagged code cells from this repository's notebook in order."""
+    path = REPLICATION_NOTEBOOK
+    notebook = json.loads(path.read_text(encoding="utf-8"))
+    module = ModuleType("typing37k.replication_notebook")
+    module.__file__ = str(path)
+
+    for number, cell in enumerate(notebook["cells"], start=1):
+        tags = cell.get("metadata", {}).get("tags", [])
+        if cell["cell_type"] != "code" or "replication-code" not in tags:
+            continue
+        source = "".join(cell["source"])
+        code = compile(source, f"{path}:cell {number}", "exec", dont_inherit=True)
+        exec(code, module.__dict__)
+
+    return module
 
 
 def main() -> None:
@@ -20,10 +41,9 @@ def main() -> None:
 
     os.environ.setdefault("MPLBACKEND", "Agg")
     from .extension import run_extension
-    from .notebook import load_replication_notebook
 
     replication = load_replication_notebook()
-    data, audit = load_data(args.raw_dir, offline=args.offline, archive=args.archive)
+    data, audit = replication.load_data(args.raw_dir, offline=args.offline, archive=args.archive)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(prefix=".typing37k-", dir=args.output.parent) as staging_dir:
         staged = Path(staging_dir)

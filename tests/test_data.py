@@ -7,7 +7,10 @@ import unittest
 from unittest.mock import patch
 from zipfile import ZIP_DEFLATED, ZipFile
 
-from typing37k import data
+from typing37k.__main__ import load_replication_notebook
+
+
+data = load_replication_notebook()
 
 
 def example_participant(identifier, fingers, hours, wpm=36):
