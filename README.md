@@ -3,6 +3,7 @@
 STAT 5200 applied econometrics project by Mike Deng. This repository replicates the full-sample participant-level findings from [Palin et al. (2019)](https://doi.org/10.1145/3338286.3340120) and estimates how the association between typing posture and speed varies by age.
 
 - [One-page project proposal](docs/proposal.pdf)
+- [Executed replication notebook](replication.ipynb)
 - [Replication report](docs/replication.md)
 - [Original research report](docs/extension.md)
 - [Class presentation with speaker notes](docs/presentation.pptx)
@@ -20,6 +21,8 @@ python -m pip install -r requirements.txt
 python -m typing37k run
 python -m unittest discover -s tests -v
 ```
+
+To work through the calculations interactively, open `replication.ipynb` from the repository root in a Python 3.12 Jupyter kernel with the dependencies above, then use **Run All**. The notebook includes saved results and contains the replication code used by the command-line runner.
 
 The first run fetches two checksummed members of the public Aalto CSV ZIP in a single 3.8 MB range request. Subsequent runs can use `python -m typing37k run --offline`. If the server does not honor range requests, download the [official CSV archive](https://userinterfaces.aalto.fi/typing37k/data/csv_raw_and_processed.zip) and pass `--archive /path/to/csv_raw_and_processed.zip`. Use `--raw-dir` for a different cache and `--output` to build results in a separate directory. [Data provenance and checksums](data/README.md)
 

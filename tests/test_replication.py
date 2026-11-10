@@ -2,7 +2,10 @@ import unittest
 
 import numpy as np
 
-from typing37k.replication import _cohen_d, _comparison_tests
+from typing37k.notebook import load_replication_notebook
+
+
+replication = load_replication_notebook()
 
 
 class ReplicationTests(unittest.TestCase):
@@ -13,7 +16,9 @@ class ReplicationTests(unittest.TestCase):
             "c": np.array([7, 8, 9, 10, 11]),
             "d": np.array([9, 10, 11, 12, 13]),
         }
-        _, pairs = _comparison_tests({"one": samples, "two": {"a": samples["a"], "d": samples["d"]}})
+        _, pairs = replication._comparison_tests(
+            {"one": samples, "two": {"a": samples["a"], "d": samples["d"]}}
+        )
         primary = pairs.loc[pairs.family == "one"].sort_values("p_raw")
         expected = np.minimum(1, np.maximum.accumulate(primary.p_raw.to_numpy() * np.arange(6, 0, -1)))
         np.testing.assert_allclose(primary.p_holm, expected)
@@ -23,5 +28,5 @@ class ReplicationTests(unittest.TestCase):
     def test_signed_cohen_d_uses_pooled_sample_sd(self):
         first = np.array([1, 3, 5])
         second = np.array([5, 7, 9])
-        self.assertAlmostEqual(_cohen_d(first, second), -2.0)
-        self.assertAlmostEqual(_cohen_d(second, first), 2.0)
+        self.assertAlmostEqual(replication._cohen_d(first, second), -2.0)
+        self.assertAlmostEqual(replication._cohen_d(second, first), 2.0)

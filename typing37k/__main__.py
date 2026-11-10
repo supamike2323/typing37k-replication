@@ -20,15 +20,16 @@ def main() -> None:
 
     os.environ.setdefault("MPLBACKEND", "Agg")
     from .extension import run_extension
-    from .replication import run_replication
+    from .notebook import load_replication_notebook
 
+    replication = load_replication_notebook()
     data, audit = load_data(args.raw_dir, offline=args.offline, archive=args.archive)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     with TemporaryDirectory(prefix=".typing37k-", dir=args.output.parent) as staging_dir:
         staged = Path(staging_dir)
         for name in ("tables", "figures"):
             (staged / name).mkdir()
-        run_replication(data, audit, staged)
+        replication.run_replication(data, audit, staged)
         run_extension(data, staged)
         for name in ("tables", "figures"):
             destination = args.output / name
