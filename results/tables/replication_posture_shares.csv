@@ -1,0 +1,16 @@
+posture,n,percent_full_sample,included_in_table_4,percent_of_six_postures
+both_hands;thumbs,27786,74.3537597,True,82.33132834
+right_hand;thumbs,3106,8.311479797,True,9.203235651
+both_hands;other-nfingers,2090,5.592721434,False,
+both_hands;index_fingers,1255,3.358308804,True,3.7186287
+right_hand;index_fingers,1032,2.761573455,True,3.057868381
+both_hands;other,579,1.549371153,False,
+left_hand;thumbs,449,1.201498528,True,1.33040979
+right_hand;middle_fingers,273,0.7305325127,False,
+both_hands;middle_fingers,226,0.604763179,False,
+right_hand;other,175,0.4682900723,False,
+right_hand;other-nfingers,160,0.4281509232,False,
+left_hand;index_fingers,121,0.3237891357,True,0.3585291416
+left_hand;middle_fingers,56,0.1498528231,False,
+left_hand;other-nfingers,33,0.08830612791,False,
+left_hand;other,29,0.07760235483,False,

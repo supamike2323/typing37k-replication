@@ -1,0 +1,8 @@
+family,method,n,groups,df,statistic_h,p_value,supplement_h,group_levels
+gender,Kruskal–Wallis,35647,2,1,8.842675251,0.002942674836,8.8426,female | male
+age,Kruskal–Wallis,37370,7,6,2828.345324,0,2828.3453,0-9 | 10-19 | 20-29 | 30-39 | 40-49 | 50-59 | 60-69
+english_experience,Kruskal–Wallis,37370,6,5,1364.989502,5.305944649e-293,1364.9895,native | always | usually | sometimes | rarely | never
+typing_course,Kruskal–Wallis,37370,2,1,29.74688675,4.922962504e-08,,0 | 1
+finger_count,Kruskal–Wallis,35459,2,1,2104.159266,0,,2 | 1
+posture,Kruskal–Wallis,33749,6,5,2204.222459,0,2204.22245,both_hands;thumbs | both_hands;index_fingers | right_hand;thumbs | right_hand;index_fingers | left_hand;thumbs | left_hand;index_fingers
+ite,Kruskal–Wallis,37370,8,7,3104.752454,0,2288.61814,none | P | A | G | P+A | P+G | A+G | P+A+G
