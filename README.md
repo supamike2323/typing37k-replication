@@ -20,4 +20,4 @@ python -m pip install -r requirements.txt
 
 Open `replication.ipynb` in a Jupyter kernel using this environment and select **Run All**. If you need JupyterLab, install it with `python -m pip install jupyterlab` and start it with `python -m jupyterlab replication.ipynb`.
 
-Run `python -m typing37k run` to regenerate the replication and extension outputs under `results/`. Add `--offline` to use verified cached data or use `--help` for archive, cache, and output options. [Data source and checksums](data/README.md) · [Result tables](results/tables/) · [Figures](results/figures/)
+The repository includes both Aalto CSVs used in the analysis. Once the dependencies are installed, run `python -m typing37k run --offline` to verify those files and regenerate the replication and extension outputs under `results/`. [Participant files](data/raw/) · [Data source and checksums](data/README.md) · [Result tables](results/tables/) · [Figures](results/figures/)

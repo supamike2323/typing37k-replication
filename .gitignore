@@ -1,5 +1,9 @@
 /data/*
 !/data/README.md
+!/data/raw/
+/data/raw/*
+!/data/raw/open_participants.csv
+!/data/raw/open_participants_header.csv
 /.venv/
 __pycache__/
 *.py[cod]
