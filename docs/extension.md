@@ -2,7 +2,7 @@
 
 ## Question and sample
 
-I estimate whether the speed gap between two-thumb and one-thumb typists differs across ages, conditional on reported keyboard type and English typing experience. The analysis uses the public Typing37K participant data from Palin et al. (2019). The outcome is participant-average words per minute (WPM) in an English transcription task. [Paper](https://doi.org/10.1145/3338286.3340120) · [Replication report](replication.md)
+I estimate whether the speed gap between two-thumb and one-thumb typists differs across ages, conditional on reported keyboard type and English typing experience. The analysis uses the public Typing37K participant data from Palin et al. (2019). The outcome is participant-average words per minute (WPM) in an English transcription task. [Executed extension notebook](../extension.ipynb) · [Paper](https://doi.org/10.1145/3338286.3340120) · [Replication report](replication.md)
 
 Of the 37,370 cleaned records, 37,053 are ages 10–59 and 31,198 in that age range reported either two thumbs or one thumb. I pool left and right one-thumb users. The extreme age bands have only eight and six one-thumb typists, so I restrict the primary analysis to five decades from 10–19 to 50–59. All 31,198 eligible participants have the required model fields. I follow the authors’ convention of coding blank English typing frequency as native English. Reported keyboard type is separate from keyboard layout and from the recorded device field. [Sample audit](../results/tables/extension_sample_audit.csv)
 
